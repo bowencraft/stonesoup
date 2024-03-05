@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561350303700290}
-  - component: {fileID: 114103883745807518}
+  - component: {fileID: -5051725110157786515}
   m_Layer: 0
-  m_Name: room
+  m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114103883745807518
+--- !u!114 &-5051725110157786515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294f5a475b8f7481a8f1bb007b2cacda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: AP Thomson
+  roomAuthor: 
   designedRoomFile: {fileID: 0}
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
   roomChoices:
-  - {fileID: 1335745978078546, guid: c8a695a8ea5e043b4b0f41cb0f84a70b, type: 3}
+  - {fileID: 1896788399910994, guid: 38a89c0c7453b4f60875fcb643a47d56, type: 3}

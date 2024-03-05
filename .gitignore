@@ -23,3 +23,5 @@ StoneSoup.sln
 StoneSoup.sln
 StoneSoup.sln
 .vs/StoneSoup/v16/.suo
+*.xml
+*.dwlt

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561350303700290}
-  - component: {fileID: 114103883745807518}
+  - component: {fileID: 7683731151259740415}
   m_Layer: 0
-  m_Name: room
+  m_Name: PerlinRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114103883745807518
+--- !u!114 &7683731151259740415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896788399910994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294f5a475b8f7481a8f1bb007b2cacda, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d8651a2d79904147af6340a2e29b023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: AP Thomson
-  designedRoomFile: {fileID: 0}
+  roomAuthor: Bowen
+  designedRoomFile: {fileID: 4900000, guid: 0d071decf83944545a729eb123b46e47, type: 3}
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
-  roomChoices:
-  - {fileID: 1335745978078546, guid: c8a695a8ea5e043b4b0f41cb0f84a70b, type: 3}
+  riverPrefab: {fileID: 1249101369981090, guid: 6a0ff2bb7bc904da18af245ab1767f81,
+    type: 3}
+  wallPrefab: {fileID: 1249101369981090, guid: 8984055f24a954629a49a7bd37ef6ef2, type: 3}
+  rockPrefab: {fileID: 1249101369981090, guid: 170c3c9dabbad47e58c1390a1c490eca, type: 3}
+  orePrefabs:
+  - {fileID: 1224687453642000, guid: ca595c03138e94ff2ae81522a922b707, type: 3}
+  - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
+  - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
+  - {fileID: 1249101369981090, guid: 5d4c673ce11e8473c87aeaadde8aa148, type: 3}
+  minNumRocks: 4
+  maxNumRocks: 14
+  minNumEnemies: 1
+  maxNumEnemies: 4
+  borderWallProbability: 0.7
