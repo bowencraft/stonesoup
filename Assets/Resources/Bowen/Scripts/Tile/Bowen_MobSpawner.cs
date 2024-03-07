@@ -39,8 +39,8 @@ public class Bowen_MobSpawner : Wall {
         } else {
             // if (ShouldTrySpawnPrefab()) {
                 TrySpawnPrefab();
-                spawnTimer = spawnCooldown;
             // }
+            spawnTimer = spawnCooldown;
         }
         // keep rotating mobSprite, and speed will increase as spawnTimer decreases
         if (mobSprite != null) mobSprite.transform.Rotate(0, 0, 360 * Time.deltaTime * (1 - spawnTimer / spawnCooldown) * 1.5f);
@@ -52,16 +52,16 @@ public class Bowen_MobSpawner : Wall {
 
     
     bool ShouldTrySpawnPrefab() {
-        int maxAllowedPrefabs = 3; // 例如，允许的最大数量，可以根据需要调整
-        int existingPrefabs = CountPrefabsInRadius(transform.position, 5f);
-        return existingPrefabs < maxAllowedPrefabs;
+        
+        int existingPrefabs = CountPrefabsInRadius(transform.position, 5f, "Player");
+        return existingPrefabs > 0 ;
     }
 
-    int CountPrefabsInRadius(Vector2 center, float radius) {
+    int CountPrefabsInRadius(Vector2 center, float radius, string tag) {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
         int count = 0;
         foreach (var hitCollider in hitColliders) {
-            if (hitCollider.gameObject.CompareTag(prefabToSpawn.tag)) { // 假设所有的prefabToSpawn都有相同的Tag
+            if (hitCollider.gameObject.CompareTag(tag)) { // 假设所有的prefabToSpawn都有相同的Tag
                 count++;
             }
         }

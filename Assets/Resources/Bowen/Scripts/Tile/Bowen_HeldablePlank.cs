@@ -7,7 +7,7 @@ public class Bowen_HeldablePlank : Tile
 {
     public GameObject prefabToSpawn;
     private Vector2 direction;
-    public override void dropped(Tile tileDroppingUs) {
+    public override void useAsItem(Tile tileDroppingUs) {
 
         // 确定检测碰撞的目标位置。我们使用tileDroppingUs的aimDirection来决定这个位置。
         // 假设每个格子的大小是由Tile.TILE_SIZE定义的。
@@ -17,9 +17,9 @@ public class Bowen_HeldablePlank : Tile
         // 使用Physics2D.OverlapPoint来检查目标位置是否有其他Tile存在。
         Collider2D hitCollider = Physics2D.OverlapPoint(checkPosition);
 
-        if (hitCollider != null) {
-            if (hitCollider.GetComponent<Tile>().tileName == "Water")
-            {
+        if (hitCollider != null && hitCollider.GetComponent<Tile>().tileName == "Water") {
+            // if ()
+            // {
                 Vector2 standardSpawnPoint = toWorldCoord(toGridCoord(checkPosition));
                 SpawnPrefabAtLocation(standardSpawnPoint, hitCollider.transform);
                 
@@ -31,15 +31,27 @@ public class Bowen_HeldablePlank : Tile
                 
                 takeDamage(this, 1, DamageType.Explosive);
                 return;
-            }
+            // }
         }
-        base.dropped(tileDroppingUs);
+        // else
+        // {
+        //     Vector2 standardSpawnPoint = toWorldCoord(toGridCoord(checkPosition));
+        //     SpawnPrefabAtLocation(standardSpawnPoint);
+        //         
+        //     if (deathSFX != null) {
+        //         AudioManager.playAudio(deathSFX);
+        //     }
+        //         
+        //     takeDamage(this, 1, DamageType.Explosive);
+        //     return;
+        // }
+        
         
     }
     
-    void SpawnPrefabAtLocation(Vector2 location, Transform parentTransform) {
+    void SpawnPrefabAtLocation(Vector2 location, Transform parentTransform = null) {
         GameObject spawnedPrefab = Instantiate(prefabToSpawn, location, Quaternion.identity);
-        spawnedPrefab.transform.parent = parentTransform.transform.parent;
+        if (parentTransform != null) spawnedPrefab.transform.parent = parentTransform.transform.parent;
         if (spawnedPrefab.GetComponent<Tile>() != null) {
             spawnedPrefab.GetComponent<Tile>().init();
         }
