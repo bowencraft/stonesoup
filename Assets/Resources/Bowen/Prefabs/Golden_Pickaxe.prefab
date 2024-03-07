@@ -189,6 +189,8 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
+  teleportDistance: 5
+  teleportSound: {fileID: 0}
   swingPivot: {fileID: 4714647998783210}
   swingPrefab: {fileID: 1580678788207258, guid: 054b5cd5388f8482aa5e8444623226f9,
     type: 3}

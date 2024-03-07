@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4548544414304634}
   - component: {fileID: 212806748000714832}
   - component: {fileID: 61074903437826796}
-  - component: {fileID: 114586047128420938}
+  - component: {fileID: 8129218803585797179}
   m_Layer: 0
   m_Name: pickaxe_swing
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6}
   m_EdgeRadius: 0
---- !u!114 &114586047128420938
+--- !u!114 &8129218803585797179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580678788207258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add7ced69cc6943cba5839fb7050c106, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c44e60326208e48b39a9724a1c3d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentWeapon: {fileID: 0}
   parentSwinger: {fileID: 0}
   timeTillDeath: 0.5
-  moveForwardSpeed: 1.5
+  moveForwardSpeed: 0.2
