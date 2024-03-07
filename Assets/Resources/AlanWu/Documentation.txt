@@ -1,0 +1,3 @@
+Tiles function:
+Energy Shield: Create a circle shield that could protect the player. Lasts 5 seconds.
+Breakable Wall: A wall that can be broken easily by one hit. Looks a bit different than the regular wall.
