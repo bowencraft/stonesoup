@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4113051429650106}
   - component: {fileID: 212269930273341580}
   - component: {fileID: 61520840255413838}
-  - component: {fileID: 36821097545322377}
+  - component: {fileID: 6760518320558156588}
   m_Layer: 10
   m_Name: Lava
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &36821097545322377
+--- !u!114 &6760518320558156588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249101369981090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3199e03969f964b7999c1506a1dcc282, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e0398c5d5bb0434599790274b927a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 0
+  tags: 8192
   tileName: Water
   health: 1
   deathEffect: {fileID: 0}
@@ -133,3 +133,8 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  damageAmount: 1
+  damageForce: 0
