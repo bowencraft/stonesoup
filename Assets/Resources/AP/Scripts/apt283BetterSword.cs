@@ -9,11 +9,7 @@ public class apt283BetterSword : Tile {
 
 	protected bool _readyForSecondSwing = false;
 	protected bool _doSecondSwing = false;
-
-	// Teleport distance
-	public float teleportDistance = 5f;
-	public AudioClip teleportSound;
-
+	
 	public Transform swingPivot;
 
 	protected Vector2 _swingDir;
@@ -99,16 +95,9 @@ public class apt283BetterSword : Tile {
 		transform.localRotation = Quaternion.identity;
 	}
 
-	void Update()
-	{
-		if (_tileHoldingUs != null)
-		{
+	void Update() {
+		if (_tileHoldingUs != null) {
 			aim();
-			if (Input.GetMouseButtonDown(1))
-			{
-				Debug.Log("Right-click detected");
-				TeleportTowardsCursor();
-			}
 		}
 		updateSpriteSorting();
 	}
@@ -145,38 +134,6 @@ public class apt283BetterSword : Tile {
 		}
 	}
 
-	void TeleportTowardsCursor()
-	{
-		if (_tileHoldingUs == null)
-		{
-			return; // Do not teleport if the sword is not held.
-		}
-
-		Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		cursorWorldPosition.z = 0; // Ensure we don't change the z-axis
-
-		Vector3 direction = (cursorWorldPosition - _tileHoldingUs.transform.position).normalized;
-		Vector3 teleportDestination = _tileHoldingUs.transform.position + direction * teleportDistance;
-
-		int layerMask = LayerMask.GetMask("Wall");
-
-		RaycastHit2D hit = Physics2D.Linecast(_tileHoldingUs.transform.position, teleportDestination, layerMask);
-		if (hit.collider != null)
-		{
-			Debug.Log("Teleportation cancelled: obstacle detected");
-			return;
-		}
-
-		// Play the teleport sound effect
-		AudioSource audioSource = _tileHoldingUs.GetComponent<AudioSource>();
-		if (audioSource != null && teleportSound != null)
-		{
-			audioSource.PlayOneShot(teleportSound);
-		}
-
-		// Update the player's position
-		_tileHoldingUs.transform.position = teleportDestination;
-	}
 
 	protected virtual IEnumerator swingProcess() {
 		_swinging = true;
