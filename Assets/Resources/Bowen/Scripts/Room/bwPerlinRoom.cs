@@ -79,7 +79,7 @@ public class bwPerlinRoom : Room {
 					// 检查位置是否已被占用（例如，通过岩石）。
 					// if (!Physics2D.OverlapPoint(Tile.toWorldCoord(new Vector2(x,y)))) {
 					if (!roomTiles.Contains(new Vector2(x, y))) {
-						Debug.Log("possible Spawn Position added");
+						// Debug.Log("possible Spawn Position added");
 						possibleSpawnPositions.Add(new Vector2(x, y));
 					}
 				}

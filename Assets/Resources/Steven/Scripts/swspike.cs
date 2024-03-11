@@ -2,20 +2,38 @@ using UnityEngine;
 
 public class swspike : Tile
 {
-    public LayerMask playerLayer;
+    // public LayerMask playerLayer;
 
     public int damageAmount = 1;
-    public float damageForce = 1000;
+    public float damageForce = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
             Tile otherTile = other.gameObject.GetComponent<Tile>();
             if (otherTile != null)
             {
-                otherTile.takeDamage(this, damageAmount);
+                if (damageAmount > 0) otherTile.takeDamage(this, damageAmount);
                 Vector2 toOtherTile = (Vector2)otherTile.transform.position - (Vector2)transform.position;
                 toOtherTile.Normalize();
                 otherTile.addForce(damageForce * toOtherTile);
             }
     }
+    protected override void updateSpriteSorting() {
+        if (_sprite == null) {
+            return;
+        }
+        if (_tileHoldingUs != null) {
+            _sprite.sortingLayerID = _tileHoldingUs.sprite.sortingLayerID;
+            _sprite.sortingOrder = _tileHoldingUs.sprite.sortingOrder+1;
+            return;
+        }
+        else if (hasTag(TileTags.CanBeHeld)) {
+            _sprite.sortingLayerID = SortingLayer.NameToID("Floor");
+        }
+        else {
+            _sprite.sortingLayerID = SortingLayer.NameToID("Floor");
+        }
+        _sprite.sortingOrder = -(int)globalY;
+    }
+
 }

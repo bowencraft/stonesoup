@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4113051429650106}
   - component: {fileID: 212269930273341580}
   - component: {fileID: 61520840255413838}
-  - component: {fileID: 6749326734997254075}
+  - component: {fileID: -2341589377300931205}
   m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1218501759
-  m_SortingLayer: -2
+  m_SortingLayerID: 2084018341
+  m_SortingLayer: -1
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 5aa90487cd67b440c908b1635a44b754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6749326734997254075
+--- !u!114 &-2341589377300931205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249101369981090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3199e03969f964b7999c1506a1dcc282, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e0398c5d5bb0434599790274b927a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 0
@@ -133,3 +133,5 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
+  damageAmount: 0
+  damageForce: 0

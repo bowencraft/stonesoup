@@ -16,7 +16,7 @@ public class Bowen_pickaxe : apt283BetterSword
         if (_swinging) {
             Tile otherTile = collider.GetComponent<Tile>();
             if (otherTile != null && !otherTile.isBeingHeld) {
-                if (otherTile is Wall) {
+                if ((otherTile is Bowen_Stone || otherTile is Bowen_Golden_Ore || otherTile is Bowen_MobSpawner) && otherTile is not Bowen_Greenland ) {
                     
                     otherTile.takeDamage(this, 1, DamageType.Explosive);
                     

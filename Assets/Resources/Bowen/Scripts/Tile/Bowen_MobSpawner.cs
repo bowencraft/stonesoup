@@ -9,7 +9,8 @@ public class Bowen_MobSpawner : Wall {
     public GameObject refreshingEffect;
     public float spawnCooldown = 5f;
     private float spawnTimer;
-    public float checkRadius = 1f; 
+    public float checkMonsterRadius = 5f;
+    public float checkPlayerRadius = 15f;
     public float spawnDistance = 2f;
     
     public bool standardSpawn = true;
@@ -34,31 +35,44 @@ public class Bowen_MobSpawner : Wall {
     }
 
     protected void Update() {
-        if (spawnTimer > 0) {
-            spawnTimer -= Time.deltaTime;
-        } else {
-            // if (ShouldTrySpawnPrefab()) {
-                TrySpawnPrefab();
-            // }
-            spawnTimer = spawnCooldown;
+        if (ShouldTrySpawnPrefab()) {
+            if (spawnTimer > 0) {
+                spawnTimer -= Time.deltaTime;
+            } else {
+                    TrySpawnPrefab();
+                spawnTimer = spawnCooldown;
+            }
+            // keep rotating mobSprite, and speed will increase as spawnTimer decreases
+            if (mobSprite != null) mobSprite.transform.Rotate(0, 0, 360 * Time.deltaTime * (1 - spawnTimer / spawnCooldown) * 1.5f);
+            
+            // slightly change color of mobSprite from color 1 to color 2, as when the spwanTimer decreases
+            
+            if (backgroundSprite != null) backgroundSprite.color = Color.Lerp(color1, color2, (1 - spawnTimer / spawnCooldown));
         }
-        // keep rotating mobSprite, and speed will increase as spawnTimer decreases
-        if (mobSprite != null) mobSprite.transform.Rotate(0, 0, 360 * Time.deltaTime * (1 - spawnTimer / spawnCooldown) * 1.5f);
-        
-        // slightly change color of mobSprite from color 1 to color 2, as when the spwanTimer decreases
-        
-        if (backgroundSprite != null) backgroundSprite.color = Color.Lerp(color1, color2, (1 - spawnTimer / spawnCooldown));
     }
 
     
     bool ShouldTrySpawnPrefab() {
         
-        int existingPrefabs = CountPrefabsInRadius(transform.position, 5f, "Player");
+        int existingPrefabs = CountPrefabsInRadius(transform.position, checkPlayerRadius, "Player");
         return existingPrefabs > 0 ;
     }
 
-    int CountPrefabsInRadius(Vector2 center, float radius, string tag) {
+    int CountPrefabsInRadius(Vector2 center, float radius, string layer) {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
+        
+        int count = 0;
+        foreach (var hitCollider in hitColliders) {
+            if (hitCollider.gameObject.layer == LayerMask.NameToLayer(layer)) { // 假设所有的prefabToSpawn都有相同的Tag
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    int CountPrefabsInRadiusByTag(Vector2 center, float radius, string tag) {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
+        
         int count = 0;
         foreach (var hitCollider in hitColliders) {
             if (hitCollider.gameObject.CompareTag(tag)) { // 假设所有的prefabToSpawn都有相同的Tag
@@ -83,9 +97,9 @@ public class Bowen_MobSpawner : Wall {
             else 
                 standardSpawnPoint = spawnPoint;
             
-            Collider2D collider = Physics2D.OverlapCircle(standardSpawnPoint, checkRadius);
+            // Collider2D collider = Physics2D.OverlapCircle(standardSpawnPoint, checkRadius);
             
-            if (!collider ) {
+            if (CountPrefabsInRadiusByTag(transform.position, checkMonsterRadius, "Monster") < 4) {
                 spotFound = true;
                 SpawnPrefabAtLocation(standardSpawnPoint);
                 if (spawnEffect != null) Instantiate(spawnEffect, standardSpawnPoint, Quaternion.identity);
