@@ -84,6 +84,9 @@ public class zw3089Spirit : BasicAICreature
             if(neededItem!=null && getItem==true)
             {
                 neededItem.gameObject.GetComponent<Tile>().dropped(this);
+                neededItem.gameObject.transform.parent = this.transform.parent.parent;
+                neededItem = null;
+                getItem = false;
             }
             return; }
         

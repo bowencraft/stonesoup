@@ -80,9 +80,4 @@ public class Bowen_HeldablePlank : Tile
         _sprite.sortingOrder = -(int)globalY;
     }
 
-    public override void dropped(Tile tileDroppingUs)
-    {
-        base.dropped(tileDroppingUs);
-        transform.parent = tileDroppingUs.transform.parent.parent;
-    }
 }
