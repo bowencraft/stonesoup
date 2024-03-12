@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
   - {fileID: 1781302445510578, guid: f2ca3ba0c3bce4ac5a30607c3d8ba68a, type: 3}
   - {fileID: 1097009321995878, guid: 15cbe013f820b8d478c420ca7ef2dc88, type: 3}
-  - {fileID: 1403095745553274, guid: c931cf86e0aaa5f4781b3957ff82bb0d, type: 3}
+  - {fileID: 2844671471551006103, guid: 1597aabfa4ff4a14b9c094b9625a5ea8, type: 3}
   minNumRocks: 4
   maxNumRocks: 14
   minNumEnemies: 1

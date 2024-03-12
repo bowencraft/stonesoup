@@ -172,8 +172,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1753806526501684, guid: d9aaa91605e297e4bb4c4f6ff94e6494, type: 3}
   ammoDropPrefabs:
-  - {fileID: 2617934718965141322, guid: 30c822a048ad3d944af64167d27268e4, type: 3}
-  - {fileID: 1838362062477336, guid: 15d6d50216ba36f47a382083b0820a0c, type: 3}
+  - {fileID: 1403095745553274, guid: c931cf86e0aaa5f4781b3957ff82bb0d, type: 3}
 --- !u!95 &269363314059192111
 Animator:
   serializedVersion: 5

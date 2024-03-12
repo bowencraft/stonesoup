@@ -136,7 +136,7 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  prefabToSpawn: {fileID: 1781302445510578, guid: 165d54fd832014741906a0e9a3c99ccd,
+  prefabToSpawn: {fileID: 1097009321995878, guid: 3c2ce321b2a15464091f957de1219688,
     type: 3}
   transferSprite: 1
   spawnEffect: {fileID: 1267897626114914, guid: a783d8491895847699704a8bc85c5466,
