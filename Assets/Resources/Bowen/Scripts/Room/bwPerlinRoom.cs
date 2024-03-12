@@ -50,7 +50,7 @@ public class bwPerlinRoom : Room {
 					
 					roomTiles.Add(new Vector2(x,y));
 					// }
-				} else if (noiseValue < 0.15f)
+				} else if (noiseValue < 0.2f)
 				{
 					// roomTiles[x][y] = Tile.spawnTile(rockPrefab, transform, x, y);
 					if (!IsSpawnerInRadius(spawners, new Vector2(x, y), 5)) {
@@ -60,13 +60,13 @@ public class bwPerlinRoom : Room {
 						
 						roomTiles.Add(new Vector2(x,y));
 					}
-				} else if (noiseValue >= 0.15f && noiseValue < 0.25f)
+				} else if (noiseValue >= 0.2f && noiseValue < 0.3f)
 				{
 					Tile.spawnTile(rockPrefab, transform, x, y);
 					
 					roomTiles.Add(new Vector2(x,y));
 				}
-				else if (noiseValue > 0.4f && noiseValue < 0.6f)
+				else if (noiseValue > 0.44f && noiseValue < 0.6f)
 				{
 					Tile.spawnTile(riverPrefab, transform, x, y);
 					

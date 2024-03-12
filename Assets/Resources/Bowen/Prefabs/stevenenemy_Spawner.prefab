@@ -136,7 +136,7 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  prefabToSpawn: {fileID: 1097009321995878, guid: 15cbe013f820b8d478c420ca7ef2dc88,
+  prefabToSpawn: {fileID: 1097009321995878, guid: 3c2ce321b2a15464091f957de1219688,
     type: 3}
   transferSprite: 1
   spawnEffect: {fileID: 1267897626114914, guid: a783d8491895847699704a8bc85c5466,
@@ -144,8 +144,10 @@ MonoBehaviour:
   refreshingEffect: {fileID: 1028137201516130, guid: c6956d67d496541a48fe508b48f70f4b,
     type: 3}
   spawnCooldown: 10
-  checkRadius: 0.1
+  checkMonsterRadius: 5
+  checkPlayerRadius: 15
   spawnDistance: 3
+  monsterLimit: 4
   standardSpawn: 0
   color1: {r: 0.8679245, g: 0.8231007, b: 0.61819154, a: 1}
   color2: {r: 1, g: 0.5058824, b: 0.6431373, a: 1}

@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 50061620062170642}
   - component: {fileID: 114950409040865806}
   m_Layer: 0
-  m_Name: mushroom_monstor
+  m_Name: mushroom_boss
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 1781302445510578}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4738708276001902}
@@ -130,7 +130,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 198468621, guid: ebf41a4b073704d1783e5eaaa06f7c09, type: 3}
+  m_Sprite: {fileID: 2011779341, guid: c5e54b438e4634d8f9d7d9a29d2ded21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 1781302445510578}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 576aac8fa8ac341d1a862ba655ebdf4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: ac32cf79cadbd46f5961426dd1d7c0b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -177,7 +177,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 1
 --- !u!114 &114718780761189240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: 20
   tileName: 
-  health: 3
+  health: 5
   deathEffect: {fileID: 1581785524438676, guid: b55624526117b4928b6338cb05f43f68,
     type: 3}
   deathSFX: {fileID: 8300000, guid: 409fa4ba0ecc74840a0bb7c5c73aa5c0, type: 3}
