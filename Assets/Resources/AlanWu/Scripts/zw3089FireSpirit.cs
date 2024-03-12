@@ -53,7 +53,7 @@ public class zw3089FireSpirit : zw3089Spirit
     public override void tileDetected(Tile otherTile)
     {
         base.tileDetected(otherTile);
-        if (otherTile.hasTag(TileTags.Enemy) && isFollowing)
+        if (otherTile.hasTag(TileTags.Enemy) && isAttacking)
         {
             otherTile.takeDamage(this,1,DamageType.Normal);
         }

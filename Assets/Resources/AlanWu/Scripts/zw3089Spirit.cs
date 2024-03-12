@@ -21,6 +21,8 @@ public class zw3089Spirit : BasicAICreature
     protected int currentHealth;
 
     protected bool findPlayer = false;
+
+    bool closeEnough = false;
     public override void tileDetected(Tile otherTile)
     {
         if (otherTile == this)
@@ -40,8 +42,18 @@ public class zw3089Spirit : BasicAICreature
             distance = Random.Range(distanceMin,distanceMax);
             
         }
+
+        if (isFindingItem && (otherTile.hasTag(TileTags.CanBeHeld) || otherTile.hasTag(TileTags.Weapon)) && (otherTile.hasTag(TileTags.Enemy)==false))
+        {
+            neededItem.gameObject.GetComponent<Tile>().pickUp(this);
+            isFindingItem = false;
+        }
     }
 
+    protected override void updateSpriteSorting()
+    {
+        _sprite.sortingOrder = 100;
+    }
     protected override void takeStep()
     {
         
@@ -65,7 +77,13 @@ public class zw3089Spirit : BasicAICreature
         //计算当前位置与玩家位置差距
         Vector3 toPlayer = transform.position - playerPos;
         // 如果物体已经在玩家附近，就不需要进一步移动
-        if (toPlayer.magnitude < distance) return;
+        if (toPlayer.magnitude < distance) { 
+            if(neededItem!=null)
+            {
+                neededItem.gameObject.GetComponent<Tile>().dropped(this);
+            }
+            return; }
+        
 
         // 计算保持一定距离的目标位置
         Vector3 targetPosition = playerT.position + toPlayer.normalized * distance;
@@ -74,6 +92,8 @@ public class zw3089Spirit : BasicAICreature
         
     }
 
+    private bool isFindingItem = false;
+    GameObject neededItem;
     public virtual void spiritMagic()
     {
         if (player == null) return;
@@ -82,6 +102,39 @@ public class zw3089Spirit : BasicAICreature
             player.health ++;
             die();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            if (!isFindingItem && hit.collider != null)
+            {
+                Tile hitTile = hit.collider.GetComponent<Tile>();
+                if (hitTile != null && (hitTile.hasTag(TileTags.CanBeHeld) || (hitTile.hasTag(TileTags.Weapon))) && (hitTile.hasTag(TileTags.Enemy) == false))
+                {
+                    isFindingItem = true;
+                    neededItem = hit.collider.gameObject;
+                }
+            }
+        }
+
+        if (isFindingItem)
+        {
+            if (neededItem != null) { carryItem(neededItem); }
+
+            //Vector3 targetposition = Tile.toWorldCoord(_targetGridPos.x, _targetGridPos.y);
+            //if (Vector3.Distance(transform.position, targetposition) < 0.01f)
+            //{
+            //    isFindingItem = false;
+            //}
+        }
+    }
+
+    public virtual void carryItem(GameObject item)
+    {
+        Vector3 iPos = neededItem.transform.position;
+
+        _targetGridPos = Tile.toGridCoord(iPos.x, iPos.y);
     }
 
     public override void Start()
