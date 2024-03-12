@@ -49,13 +49,16 @@ MonoBehaviour:
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
-  riverPrefab: {fileID: 1249101369981090, guid: 39187656bc47d4d97896658f20f249a9,
+  riverPrefab: {fileID: 1249101369981090, guid: 6a0ff2bb7bc904da18af245ab1767f81,
     type: 3}
   wallPrefab: {fileID: 1249101369981090, guid: 8984055f24a954629a49a7bd37ef6ef2, type: 3}
-  rockPrefab: {fileID: 1249101369981090, guid: 258a74aeb7f9543399497a3a2ee8d9bd, type: 3}
+  monsterPrefabs:
+  - {fileID: 1249101369981090, guid: 258a74aeb7f9543399497a3a2ee8d9bd, type: 3}
+  - {fileID: 1249101369981090, guid: 65a99d7f3157fda4f90d9af930e84d2a, type: 3}
+  rockPrefab: {fileID: 1249101369981090, guid: 3376029dbca4e45368b583a934a237ca, type: 3}
   orePrefabs:
   - {fileID: 1224687453642000, guid: ca595c03138e94ff2ae81522a922b707, type: 3}
-  - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
+  - {fileID: 1249101369981090, guid: e1c3b5d16e2e3402187c362250488b28, type: 3}
   - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
   - {fileID: 1249101369981090, guid: 5d4c673ce11e8473c87aeaadde8aa148, type: 3}
   minNumRocks: 4

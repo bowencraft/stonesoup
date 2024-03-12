@@ -9,7 +9,7 @@ public class Bowen_pickaxe : apt283BetterSword
     }
 
     void OnTriggerStay2D(Collider2D collider) {
-        HandleCollision(collider);
+        // HandleCollision(collider);
     }
 
     void HandleCollision(Collider2D collider) {

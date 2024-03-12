@@ -10,6 +10,7 @@ public class bwPerlinRoom : Room {
 	// The room needs references to the things it can spawn.
 	public GameObject riverPrefab;
 	public GameObject wallPrefab;
+	public GameObject[] monsterPrefabs;
 	public GameObject rockPrefab;
 	public GameObject[] orePrefabs;
 
@@ -49,16 +50,21 @@ public class bwPerlinRoom : Room {
 					
 					roomTiles.Add(new Vector2(x,y));
 					// }
-				} else if (noiseValue < 0.2f)
+				} else if (noiseValue < 0.15f)
 				{
 					// roomTiles[x][y] = Tile.spawnTile(rockPrefab, transform, x, y);
 					if (!IsSpawnerInRadius(spawners, new Vector2(x, y), 5)) {
 						// 在这里生成spawnerPrefab
-						Tile.spawnTile(rockPrefab, transform, x, y);
+						Tile.spawnTile(monsterPrefabs[Random.Range(0,monsterPrefabs.Length)], transform, x, y);
 						spawners.Add(new Vector2(x, y));
 						
 						roomTiles.Add(new Vector2(x,y));
 					}
+				} else if (noiseValue >= 0.15f && noiseValue < 0.25f)
+				{
+					Tile.spawnTile(rockPrefab, transform, x, y);
+					
+					roomTiles.Add(new Vector2(x,y));
 				}
 				else if (noiseValue > 0.4f && noiseValue < 0.6f)
 				{

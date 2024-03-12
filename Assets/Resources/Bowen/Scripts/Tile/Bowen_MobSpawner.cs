@@ -12,7 +12,7 @@ public class Bowen_MobSpawner : Wall {
     public float checkMonsterRadius = 5f;
     public float checkPlayerRadius = 15f;
     public float spawnDistance = 2f;
-    
+    public int monsterLimit = 4;
     public bool standardSpawn = true;
 
     public Color color1;
@@ -99,7 +99,7 @@ public class Bowen_MobSpawner : Wall {
             
             // Collider2D collider = Physics2D.OverlapCircle(standardSpawnPoint, checkRadius);
             
-            if (CountPrefabsInRadiusByTag(transform.position, checkMonsterRadius, "Monster") < 4) {
+            if (CountPrefabsInRadiusByTag(transform.position, checkMonsterRadius, "Monster") < monsterLimit) {
                 spotFound = true;
                 SpawnPrefabAtLocation(standardSpawnPoint);
                 if (spawnEffect != null) Instantiate(spawnEffect, standardSpawnPoint, Quaternion.identity);

@@ -127,4 +127,4 @@ MonoBehaviour:
   parentWeapon: {fileID: 0}
   parentSwinger: {fileID: 0}
   timeTillDeath: 0.5
-  moveForwardSpeed: 0.2
+  moveForwardSpeed: 1.5

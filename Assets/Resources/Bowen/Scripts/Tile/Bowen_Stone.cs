@@ -29,7 +29,7 @@ public class Bowen_Stone : Wall
 			if (tile != null)
 			{
 				tile.init();
-				tile.health = 2;
+				// tile.health = 2;
 			}
 		}
 
@@ -53,7 +53,7 @@ public class Bowen_Stone : Wall
 			Vector2 checkPosition = (Vector2)transform.position + direction * Tile.TILE_SIZE;
 			Collider2D hitCollider = Physics2D.OverlapPoint(checkPosition);
 
-			if (hitCollider != null && hitCollider.GetComponent<Wall>() != null) {
+			if (hitCollider != null && hitCollider.GetComponent<Bowen_Stone>() != null) {
 				// 检测到Wall，替换为Stone
 				Vector2 standardSpawnPoint = toWorldCoord(toGridCoord(checkPosition));
 				SpawnStoneAtLocation(standardSpawnPoint);

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4113051429650106}
   - component: {fileID: 212269930273341580}
   - component: {fileID: 61520840255413838}
-  - component: {fileID: 4373689464384600152}
+  - component: {fileID: 3714500399291762277}
+  - component: {fileID: -5049086829159269986}
   m_Layer: 10
-  m_Name: Grass
+  m_Name: Respawnable_Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1218501759
   m_SortingLayer: -2
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: b5b600d5d4d2346ea9b9e0a9a19094aa, type: 3}
+  m_Sprite: {fileID: -399463617, guid: 571385c79d30e467191b212e48191319, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +113,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &4373689464384600152
+--- !u!95 &3714500399291762277
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249101369981090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d779d52121bcf46738ca5fb8c59fc2c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5049086829159269986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,25 +143,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249101369981090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a86320b9edf94f15a65e704ee355f09, type: 3}
+  m_Script: {fileID: 11500000, guid: 6634a1d2fb1ce45bb9012b4933422e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 8192
-  tileName: Grass
-  health: 10
-  deathEffect: {fileID: 1267897626114914, guid: a783d8491895847699704a8bc85c5466,
-    type: 3}
+  tileName: Lava
+  health: 1
+  deathEffect: {fileID: 0}
   deathSFX: {fileID: 0}
   heldOffset: {x: 0.2, y: -0.1}
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  prefabToSpawn: {fileID: 1249101369981090}
+  prefabToSpawn: {fileID: 1249101369981090, guid: 6a0ff2bb7bc904da18af245ab1767f81,
+    type: 3}
   transferSprite: 0
   spawnEffect: {fileID: 0}
-  refreshingEffect: {fileID: 1267897626114914, guid: a783d8491895847699704a8bc85c5466,
+  refreshingEffect: {fileID: 1028137201516130, guid: c6956d67d496541a48fe508b48f70f4b,
     type: 3}
-  spawnCooldown: 15
+  spawnCooldown: 5
   checkMonsterRadius: 5
   checkPlayerRadius: 15
   spawnDistance: 2
@@ -147,3 +169,5 @@ MonoBehaviour:
   standardSpawn: 1
   color1: {r: 0, g: 0, b: 0, a: 0}
   color2: {r: 0, g: 0, b: 0, a: 0}
+  damageAmount: 1
+  damageForce: 1
