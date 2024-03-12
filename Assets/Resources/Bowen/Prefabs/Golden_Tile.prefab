@@ -135,11 +135,13 @@ MonoBehaviour:
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
   minerals:
-  - {fileID: 1781302445510578, guid: 16b0864b865574bc4a169084f3bf8cfc, type: 3}
   - {fileID: 1224687453642000, guid: ca595c03138e94ff2ae81522a922b707, type: 3}
-  - {fileID: 1781302445510578, guid: e528169e05dd14af1aa29b5a033465fb, type: 3}
-  - {fileID: 1781302445510578, guid: 101e08a6241bf284582bc519fd8d1117, type: 3}
   - {fileID: 1614338125090674, guid: 885bafc867bdd1f4fbc841c4a0a72f91, type: 3}
   - {fileID: 2617934718965141322, guid: 30c822a048ad3d944af64167d27268e4, type: 3}
-  - {fileID: 1838362062477336, guid: 15d6d50216ba36f47a382083b0820a0c, type: 3}
-  - {fileID: 1838362062477336, guid: 15d6d50216ba36f47a382083b0820a0c, type: 3}
+  - {fileID: 2617934718965141322, guid: 30c822a048ad3d944af64167d27268e4, type: 3}
+  - {fileID: 1781302445510578, guid: 17a8effabba654453aa33218ca919afe, type: 3}
+  - {fileID: 2844671471551006103, guid: 1597aabfa4ff4a14b9c094b9625a5ea8, type: 3}
+  - {fileID: 8658293870122049563, guid: 764eafdf82ba919469ede21ad06e6f2b, type: 3}
+  - {fileID: 8658293870122049563, guid: 764eafdf82ba919469ede21ad06e6f2b, type: 3}
+  - {fileID: 2844671471551006103, guid: 1597aabfa4ff4a14b9c094b9625a5ea8, type: 3}
+  - {fileID: 737487702554184734, guid: 881241e48bf59eb4aa03ea3ea1e926cf, type: 3}

@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: 20
   tileName: 
-  health: 1
+  health: 3
   deathEffect: {fileID: 1028137201516130, guid: c6956d67d496541a48fe508b48f70f4b,
     type: 3}
   deathSFX: {fileID: 8300000, guid: 409fa4ba0ecc74840a0bb7c5c73aa5c0, type: 3}
@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1753806526501684, guid: d9aaa91605e297e4bb4c4f6ff94e6494, type: 3}
   ammoDropPrefabs:
-  - {fileID: 2617934718965141322, guid: 30c822a048ad3d944af64167d27268e4, type: 3}
+  - {fileID: 9106323005114291117, guid: a9f36df487e26ec4899dd81af41a975e, type: 3}
   - {fileID: 1838362062477336, guid: 15d6d50216ba36f47a382083b0820a0c, type: 3}
 --- !u!1 &1097812431973016
 GameObject:

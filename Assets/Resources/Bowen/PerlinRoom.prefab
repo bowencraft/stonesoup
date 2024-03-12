@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8651a2d79904147af6340a2e29b023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: Bowen
+  roomAuthor: Bowen, Steven, Alan, Alex
   designedRoomFile: {fileID: 4900000, guid: 0d071decf83944545a729eb123b46e47, type: 3}
   localTilePrefabs: []
   roomGridX: 0
@@ -62,7 +62,9 @@ MonoBehaviour:
   - {fileID: 1224687453642000, guid: ca595c03138e94ff2ae81522a922b707, type: 3}
   - {fileID: 1249101369981090, guid: e1c3b5d16e2e3402187c362250488b28, type: 3}
   - {fileID: 1249101369981090, guid: 29e8776c9a9824bb6831cb7b8f11a9a0, type: 3}
+  - {fileID: 1781302445510578, guid: f2ca3ba0c3bce4ac5a30607c3d8ba68a, type: 3}
   - {fileID: 1097009321995878, guid: 15cbe013f820b8d478c420ca7ef2dc88, type: 3}
+  - {fileID: 1403095745553274, guid: c931cf86e0aaa5f4781b3957ff82bb0d, type: 3}
   minNumRocks: 4
   maxNumRocks: 14
   minNumEnemies: 1

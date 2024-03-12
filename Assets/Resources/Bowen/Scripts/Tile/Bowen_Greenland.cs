@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Bowen_Greenland : Bowen_MobSpawner
 {
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     // 检查进入的Collider2D是否有Player组件
-    //     Player player = other.gameObject.GetComponent<Player>();
-    //     if (player != null && player.health < 3)
-    //     {
-    //         player.health += 1;
-    //         takeDamage(this, 100, DamageType.Explosive);
-    //     }
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // 检查进入的Collider2D是否有Player组件
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player != null && player.health < 3)
+        {
+            player.health += 1;
+            takeDamage(this, 100, DamageType.Explosive);
+        }
+    }
     protected override void updateSpriteSorting() {
         if (_sprite == null) {
             return;

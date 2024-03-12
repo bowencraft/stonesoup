@@ -63,12 +63,12 @@ GameObject:
   - component: {fileID: 212539437256815780}
   - component: {fileID: 95412980504963560}
   - component: {fileID: 58030391269378188}
+  - component: {fileID: 114059769530843280}
   - component: {fileID: 50061620062170642}
   - component: {fileID: 114950409040865806}
-  - component: {fileID: 6773637471882416510}
   m_Layer: 0
-  m_Name: mushroom_boss
-  m_TagString: Monster
+  m_Name: bfs_mushroom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,15 +80,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781302445510578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4738708276001902}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!212 &212539437256815780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,10 +127,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2022272541
-  m_SortingLayer: 1
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 2011779341, guid: c5e54b438e4634d8f9d7d9a29d2ded21, type: 3}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 198468621, guid: ebf41a4b073704d1783e5eaaa06f7c09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 1781302445510578}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac32cf79cadbd46f5961426dd1d7c0b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 576aac8fa8ac341d1a862ba655ebdf4d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,9 +175,39 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.41}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!114 &114059769530843280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781302445510578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cafb86f7ddc8470d8d8d12d12a3fbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 20
+  tileName: 
+  health: 3
+  deathEffect: {fileID: 1581785524438676, guid: b55624526117b4928b6338cb05f43f68,
+    type: 3}
+  deathSFX: {fileID: 8300000, guid: 409fa4ba0ecc74840a0bb7c5c73aa5c0, type: 3}
+  heldOffset: {x: 0.2, y: -0.1}
+  heldAngle: 0
+  tileWereHolding: {fileID: 0}
+  aimDirection: {x: 0, y: 0}
+  moveSpeed: 6
+  moveAcceleration: 100
+  tagsWeChase: 32
+  damageForce: 1000
+  damageAmount: 1
+  maxDistanceToContinueChase: 14
+  maxSearchDepth: 6
+  pathColliderRadius: 0.7
 --- !u!50 &50061620062170642
 Rigidbody2D:
   serializedVersion: 4
@@ -212,33 +242,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTint: {r: 0.9411765, g: 0.4117647, b: 0.6117647, a: 1}
---- !u!114 &6773637471882416510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781302445510578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b64b01dc8aa44f587efd0c84e6625a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tags: 20
-  tileName: 
-  health: 3
-  deathEffect: {fileID: 1581785524438676, guid: b55624526117b4928b6338cb05f43f68,
-    type: 3}
-  deathSFX: {fileID: 8300000, guid: 409fa4ba0ecc74840a0bb7c5c73aa5c0, type: 3}
-  heldOffset: {x: 0.2, y: -0.1}
-  heldAngle: 0
-  tileWereHolding: {fileID: 0}
-  aimDirection: {x: 0, y: 0}
-  moveSpeed: 5
-  moveAcceleration: 100
-  tagsWeChase: 32
-  damageForce: 1000
-  damageAmount: 1
-  maxDistanceToContinueChase: 14
-  maxSearchDepth: 6
-  pathColliderRadius: 0.7
