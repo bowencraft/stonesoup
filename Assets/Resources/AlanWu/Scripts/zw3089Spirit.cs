@@ -23,6 +23,8 @@ public class zw3089Spirit : BasicAICreature
     protected bool findPlayer = false;
 
     bool closeEnough = false;
+
+    bool getItem = false;
     public override void tileDetected(Tile otherTile)
     {
         if (otherTile == this)
@@ -47,6 +49,7 @@ public class zw3089Spirit : BasicAICreature
         {
             neededItem.gameObject.GetComponent<Tile>().pickUp(this);
             isFindingItem = false;
+            getItem = true;
         }
     }
 
@@ -78,7 +81,7 @@ public class zw3089Spirit : BasicAICreature
         Vector3 toPlayer = transform.position - playerPos;
         // 如果物体已经在玩家附近，就不需要进一步移动
         if (toPlayer.magnitude < distance) { 
-            if(neededItem!=null)
+            if(neededItem!=null && getItem==true)
             {
                 neededItem.gameObject.GetComponent<Tile>().dropped(this);
             }
