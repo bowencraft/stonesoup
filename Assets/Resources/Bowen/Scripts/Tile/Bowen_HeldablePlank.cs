@@ -59,7 +59,24 @@ public class Bowen_HeldablePlank : Tile
 
     void Update() {
         if (_tileHoldingUs != null) {
-            tileName = string.Format("Oak Plank (Amount: {0})", health);
+            tileName = string.Format("Placeable Block (Amount: {0})", health);
         }
+    }
+    protected override void updateSpriteSorting() {
+        if (_sprite == null) {
+            return;
+        }
+        if (_tileHoldingUs != null) {
+            _sprite.sortingLayerID = _tileHoldingUs.sprite.sortingLayerID;
+            _sprite.sortingOrder = _tileHoldingUs.sprite.sortingOrder+1;
+            return;
+        }
+        else if (hasTag(TileTags.CanBeHeld)) {
+            _sprite.sortingLayerID = SortingLayer.NameToID("Floor");
+        }
+        else {
+            _sprite.sortingLayerID = SortingLayer.NameToID("Floor");
+        }
+        _sprite.sortingOrder = -(int)globalY;
     }
 }

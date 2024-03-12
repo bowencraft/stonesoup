@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3199e03969f964b7999c1506a1dcc282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 0
+  tags: 8193
   tileName: Plank
   health: 1
   deathEffect: {fileID: 0}

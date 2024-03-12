@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0398c5d5bb0434599790274b927a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 8192
+  tags: 1
   tileName: Water
   health: 1
   deathEffect: {fileID: 0}

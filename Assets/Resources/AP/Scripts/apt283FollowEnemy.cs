@@ -215,7 +215,7 @@ public class apt283FollowEnemy : BasicAICreature {
 
 	protected bool dontOverlapWalls(RaycastHit2D hitResult) {
 		Tile maybeResultTile = hitResult.transform.GetComponent<Tile>();
-		if (maybeResultTile != null && maybeResultTile.hasTag(TileTags.Wall)) {
+		if (maybeResultTile != null && (maybeResultTile.hasTag(TileTags.Wall) || maybeResultTile.hasTag(TileTags.Water))) {
 			return false;
 		}
 		return true;
